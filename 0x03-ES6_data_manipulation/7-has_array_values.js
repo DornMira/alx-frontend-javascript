@@ -1,8 +1,3 @@
-/* eslint-disable linebreak-style */
-const hasValuesFromArray = (aSet, anArr) => {
-  const arr = Array.from(aSet);
-
-  return arr.includes(...anArr);
-};
-
-export default hasValuesFromArray;
+export default function hasValuesFromArray(set, arr) {
+  return arr.reduce((prev, curr) => prev && set.has(curr), true);
+}
